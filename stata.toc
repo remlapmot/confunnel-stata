@@ -1,0 +1,3 @@
+v 3
+d Stata package implementing contour enhanced funnel plots for meta-analysis
+p confunnel

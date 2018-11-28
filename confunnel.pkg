@@ -1,7 +1,7 @@
 v 3
 d confunnel
 d Author: Tom Palmer
-d Distribution-Date: 20181012
+d Distribution-Date: 20181127
 f confunnel.ado
 f confunnel.sthlp
 f confunnel_example.ado

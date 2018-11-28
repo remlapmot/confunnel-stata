@@ -170,9 +170,8 @@ Cochrane Handbook for Systematic Reviews of Interventions Version 5.0.1.{p_end}
 
 {title:Author}
 
-{phang}Tom Palmer, MRC Centre for Causal Analyses in Translational Epidemiology,
- Department of Social Medicine, University of Bristol, UK. 
- {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
+{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
+ {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
  
 {phang}Jaime Peters wrote the first version of this command.{p_end}
 

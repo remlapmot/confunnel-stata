@@ -4,7 +4,7 @@
 
 ## Installation
 To install, issue in Stata (in versions 13 and above):
-```
+``` stata
 net install confunnel, from(https://raw.github.com/remlapmot/confunnel-stata/master/)
 ```
 

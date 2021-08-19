@@ -32,7 +32,8 @@ preferred-citation:
   journal: The Stata Journal
   volume: 8
   issue: 2
-  pages: 242-254
+  start: 242
+  end: 254
   year: 2008
   url: https://journals.sagepub.com/doi/pdf/10.1177/1536867X0800800206
   doi: 10.1177/1536867X0800800206

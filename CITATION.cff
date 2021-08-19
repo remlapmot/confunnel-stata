@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please use the information in the preferred-citation metadata."
+authors:
+- family-names: "Palmer"
+  given-names: "Tom"
+  orcid: "https://orcid.org/0000-0003-4655-4511"
+- family-names: "Peters"
+  given-names: "Jaime"
+  orcid: "https://orcid.org/0000-0003-1778-3518"
+- family-names: "Sutton"
+  given-names: "Alex"
+- family-names: "Moreno"
+  given-names: "Santiago"
+title: "confunnel: Stata package implementing contour enhanced funnel plots for meta-analysis"
+type: software
+date-released: 2008-06-01
+repository-code: "https://github.com/remlapmot/confunnel-stata"
+preferred-citation:
+  authors:
+    - family-names: "Palmer"
+      given-names: "Tom"
+      orcid: "https://orcid.org/0000-0003-4655-4511"
+    - family-names: "Peters"
+      given-names: "Jaime"
+      orcid: "https://orcid.org/0000-0003-1778-3518"
+    - family-names: "Sutton"
+      given-names: "Alex"
+    - family-names: "Moreno"
+      given-names: "Santiago"
+  title: "Contour-enhanced funnel plots for meta-analysis"
+  type: article
+  journal: The Stata Journal
+  volume: 8
+  issue: 2
+  pages: 242-254
+  year: 2008
+  url: https://journals.sagepub.com/doi/pdf/10.1177/1536867X0800800206
+  doi: 10.1177/1536867X0800800206

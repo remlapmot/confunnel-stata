@@ -1,0 +1,3 @@
+# Linguist settings for Languages stats
+*.toc linguist-language=Stata
+*.pkg linguist-language=Stata

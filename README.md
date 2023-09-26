@@ -10,7 +10,7 @@ net install confunnel, from("https://raw.github.com/remlapmot/confunnel-stata/ma
 
 ## Implementation in official Stata
 
-An official Stata contour enhanced funnel plot command, based on `confunnel` is available, since I think Stata version 15, through the `meta funnelplot` command as follows
+An official Stata contour enhanced funnel plot command, based on `confunnel` is available, since I think Stata version 15, through the [`meta funnelplot`](https://www.stata.com/manuals/metametafunnelplot.pdf) command as follows
 ```
 meta funnelplot [if] [in], contours(contourspec) [options]
 ```

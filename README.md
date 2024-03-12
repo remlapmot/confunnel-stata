@@ -22,13 +22,15 @@ Here is a comparison of the plots that they produce (plots generated under Stata
 
 ```stata
 webuse nsaidsset, clear
-confunnel _meta_es _meta_se, xtitle("Log odds-ratio")
+ssc install mylabels
+mylabels 0.02 0.2 1 5 50, myscale(log(@)) local(mylab)
+confunnel _meta_es _meta_se, twowayopts(xtitle("Odds ratios (log scale)") `"xlabel(`mylab')"')
 ```
 
 ![Contour enhanced funnel plot generated using confunnel](./img/confunnel.png)
 
 ```stata
-meta funnelplot, contours(1 5 10)
+meta funnelplot, contours(1 5 10) xtitle("Odds ratios (log scale)") xlabel(`mylab')
 ```
 
 ![Contour enhanced funnel plot generated using meta funnel](./img/metafunnel.png)

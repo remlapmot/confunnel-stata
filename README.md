@@ -18,7 +18,7 @@ An official Stata contour enhanced funnel plot command, based on `confunnel` is 
 meta funnelplot [if] [in], contours(contourspec) [options]
 ```
 
-Here is a comparison of the plots that they produce
+Here is a comparison of the plots that they produce (plots generated under Stata 18)
 
 ```stata
 webuse nsaidsset, clear

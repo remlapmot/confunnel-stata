@@ -24,13 +24,13 @@ Here is a comparison of the plots that they produce (plots generated under Stata
 webuse nsaidsset, clear
 ssc install mylabels
 mylabels 0.02 0.2 1 5 50, myscale(log(@)) local(mylab)
-confunnel _meta_es _meta_se, twowayopts(xtitle("Odds ratios (log scale)") `"xlabel(`mylab')"')
+confunnel _meta_es _meta_se, twowayopts(xtitle("Odds ratios (log scale)") `"xlabel(`mylab')"' title("Contour-enhanced funnel plot"))
 ```
 
 ![Contour enhanced funnel plot generated using confunnel](./img/confunnel.png)
 
 ```stata
-meta funnelplot, contours(1 5 10) xtitle("Odds ratios (log scale)") xlabel(`mylab')
+meta funnelplot, contours(1 5 10) xtitle("Odds ratios (log scale)") xlabel(`mylab') legend(pos(2) ring(0))
 ```
 
 ![Contour enhanced funnel plot generated using meta funnel](./img/metafunnel.png)

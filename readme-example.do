@@ -1,4 +1,4 @@
-version 18
+version 18.5
 webuse nsaidsset, clear
 
 // ssc install mylabels

@@ -13,3 +13,7 @@ render:
     rm -rf ../docs/*
     cp ../img/* ../docs/img/
     mv _site/* ../docs/
+
+[working-directory: 'cscripts']
+test:
+    stata-mp -b "do master"

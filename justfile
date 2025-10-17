@@ -1,6 +1,9 @@
 dev:
     stata-mp "do developer"
 
+readme:
+    stata-mp "do readme-example"
+    
 [working-directory: 'site']
 render:
     #!/usr/bin/env bash

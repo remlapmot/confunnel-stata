@@ -1,0 +1,9 @@
+---
+pagetitle: about
+---
+
+This is the website for the **confunnel** Stata package.
+
+The GitHub repository is [here](https://github.com/remlapmot/confunnel-stata).
+
+It is maintained by [Tom Palmer](https://remlapmot.github.io/).

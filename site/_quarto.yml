@@ -1,0 +1,39 @@
+project: 
+  type: website
+  preview: 
+    port: 4000
+
+website: 
+  title: "confunnel"
+  repo-url: https://github.com/remlapmot/confunnel-stata
+  repo-branch: main
+  navbar:
+    search: true
+    left:
+      - text: "Home"
+        href: index.html
+      - text: "Helpfile examples"
+        menu:
+        - text: "confunnel"
+          href: confunnel-examples.html
+      - text: "Helpfiles"
+        menu:
+        - text: "confunnel"
+          href: confunnel-helpfile.html
+      - text: "About"
+        href: about.html
+    right:
+      - icon: github
+        href: https://github.com/remlapmot/confunnel-stata
+        aria-label: GitHub
+
+format:
+  html:
+    theme: cosmo
+    css: mystyles.css
+    toc: true
+    highlight-style: arrow
+
+freeze: false  # re-render only when source changes
+
+# bibliography: refs.bib

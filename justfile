@@ -11,4 +11,5 @@ render:
     python -m nbstata.install --sys-prefix
     quarto render
     rm -rf ../docs/*
+    cp ../img/* ../docs/img/
     mv _site/* ../docs/

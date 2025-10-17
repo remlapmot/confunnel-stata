@@ -1,0 +1,87 @@
+-------------------------------------------------------------------------------
+      name:  master
+       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/master.log
+  log type:  text
+ opened on:  17 Oct 2025, 14:51:57
+
+. 
+. cscript master
+-------------------------------------------------------------------BEGIN master
+
+. 
+. cap noi ado describe confunnel
+
+. 
+. local cscripts confunnel
+
+. 
+. foreach dofile of local cscripts {
+  2.     log using `dofile'.log, text replace name(`dofile')
+  3.     do `dofile'
+  4.     log close `dofile'
+  5. }
+-------------------------------------------------------------------------------
+      name:  confunnel
+       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/confunnel.log
+  log type:  text
+ opened on:  17 Oct 2025, 14:51:57
+
+. cscript confunnel adofiles confunnel
+----------------------------------------------------------------BEGIN confunnel
+
+-> which confunnel, usesysdir
+/Users/tom/Documents/GitHub/confunnel-stata/confunnel.ado
+*! 1.0.5 Tom Palmer 27nov2008; based on con_funnel by Jaime Peters
+
+. 
+. about
+
+StataNow/MP 19.5 for Unix (Apple Silicon)
+Revision 06 Oct 2025
+Copyright 1985-2025 StataCorp LLC
+
+Total usable memory: 16.00 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Serial number: 501909307934
+  Licensed to: Tom Palmer
+               University of Bristol
+
+. 
+. use http://fmwww.bc.edu/repec/bocode/m/metan_example_data.dta, clear
+(Example dataset for meta-analyses, Ross Harris 2006)
+
+. gen logOR = log((tdeath*cnodeath)/(tnodeath*cdeath))
+
+. gen selogOR = sqrt((1/tdeath) + (1/tnodeath) + (1/cdeath) + (1/cnodeath))
+
+. 
+. confunnel logOR selogOR
+
+. 
+. confunnel logOR selogOR, noshadedregions
+
+. 
+. confunnel logOR selogOR, solidcontours shadedcontours noshadedregions
+
+. 
+. confunnel logOR selogOR, metric(invse)
+
+. 
+. confunnel logOR selogOR, onesided(upper) noshadedregions
+
+. 
+end of do-file
+      name:  confunnel
+       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/confunnel.log
+  log type:  text
+ closed on:  17 Oct 2025, 14:51:59
+-------------------------------------------------------------------------------
+
+. 
+. log close _all
+      name:  master
+       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/master.log
+  log type:  text
+ closed on:  17 Oct 2025, 14:51:59
+-------------------------------------------------------------------------------

@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "confunnel",
+    "section": "",
+    "text": "This is the website for the confunnel Stata package.\nThe GitHub repository is here.\nIt is maintained by Tom Palmer."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Stata implementation of contour enhanced funnel plots",
+    "section": "",
+    "text": "confunnel is a Stata command implementing contour enhanced funnel plots for meta-analysis (Peters et al., 2008). It was distributed in the Stata Journal (Palmer et al., 2008).\n\n\nTo install, issue in Stata (in versions 13 and above):\nnet install confunnel, from(\"https://raw.github.com/remlapmot/confunnel-stata/master/\")\n\n\n\nAn official Stata contour enhanced funnel plot command, based on confunnel is available, since I think Stata version 16, through the meta funnelplot command as follows\nmeta funnelplot [if] [in], contours(contourspec) [options]\nHere is a comparison of the plots that they produce (plots generated under StataNow 18.5)\nwebuse nsaidsset, clear\nssc install mylabels\nmylabels 0.02 0.2 1 5 50, myscale(log(@)) local(mylab)\nconfunnel _meta_es _meta_se, twowayopts(xtitle(\"Odds ratios (log scale)\") `\"xlabel(`mylab')\"' title(\"Contour-enhanced funnel plot\"))\n\n\n\nContour enhanced funnel plot generated using confunnel\n\n\nmeta funnelplot, contours(1 5 10) xtitle(\"Odds ratios (log scale)\") xlabel(`mylab') legend(pos(2) ring(0))\n\n\n\nContour enhanced funnel plot generated using meta funnel\n\n\n\n\n\n\nPalmer, T. M., J. L. Peters, A. J. Sutton, and S. G. Moreno. Contour enhanced funnel plots for meta-analysis. Stata Journal, 2008, 8, 2, 242-254. DOI: 10.1177%2F1536867X0800800206\nPeters, J. L., A. J. Sutton, D. R. Jones, K. R. Abrams, and L. Rushton. Contour-enhanced meta-analysis funnel plots help distinguish publication bias from other causes of asymmetry. Journal of Clinical Epidemiology, 2008, 61, 10, 991-996. DOI: 10.1016/j.jclinepi.2007.11.010"
+  },
+  {
+    "objectID": "index.html#installation",
+    "href": "index.html#installation",
+    "title": "Stata implementation of contour enhanced funnel plots",
+    "section": "",
+    "text": "To install, issue in Stata (in versions 13 and above):\nnet install confunnel, from(\"https://raw.github.com/remlapmot/confunnel-stata/master/\")"
+  },
+  {
+    "objectID": "index.html#implementation-in-official-stata",
+    "href": "index.html#implementation-in-official-stata",
+    "title": "Stata implementation of contour enhanced funnel plots",
+    "section": "",
+    "text": "An official Stata contour enhanced funnel plot command, based on confunnel is available, since I think Stata version 16, through the meta funnelplot command as follows\nmeta funnelplot [if] [in], contours(contourspec) [options]\nHere is a comparison of the plots that they produce (plots generated under StataNow 18.5)\nwebuse nsaidsset, clear\nssc install mylabels\nmylabels 0.02 0.2 1 5 50, myscale(log(@)) local(mylab)\nconfunnel _meta_es _meta_se, twowayopts(xtitle(\"Odds ratios (log scale)\") `\"xlabel(`mylab')\"' title(\"Contour-enhanced funnel plot\"))\n\n\n\nContour enhanced funnel plot generated using confunnel\n\n\nmeta funnelplot, contours(1 5 10) xtitle(\"Odds ratios (log scale)\") xlabel(`mylab') legend(pos(2) ring(0))\n\n\n\nContour enhanced funnel plot generated using meta funnel"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Stata implementation of contour enhanced funnel plots",
+    "section": "",
+    "text": "Palmer, T. M., J. L. Peters, A. J. Sutton, and S. G. Moreno. Contour enhanced funnel plots for meta-analysis. Stata Journal, 2008, 8, 2, 242-254. DOI: 10.1177%2F1536867X0800800206\nPeters, J. L., A. J. Sutton, D. R. Jones, K. R. Abrams, and L. Rushton. Contour-enhanced meta-analysis funnel plots help distinguish publication bias from other causes of asymmetry. Journal of Clinical Epidemiology, 2008, 61, 10, 991-996. DOI: 10.1016/j.jclinepi.2007.11.010"
+  },
+  {
+    "objectID": "confunnel-examples.html",
+    "href": "confunnel-examples.html",
+    "title": "confunnel helpfile examples",
+    "section": "",
+    "text": "The following examples use the example dataset accompanying metan.\n\nuse http://fmwww.bc.edu/repec/bocode/m/metan_example_data.dta, clear\ngen logOR = log((tdeath*cnodeath)/(tnodeath*cdeath))\ngen selogOR = sqrt((1/tdeath) + (1/tnodeath) + (1/cdeath) + (1/cnodeath))\n\n(Example dataset for meta-analyses, Ross Harris 2006)\n\n\n\nconfunnel logOR selogOR\n\n\n\n\n\n\n\n\n\nconfunnel logOR selogOR, noshadedregions\n\n\n\n\n\n\n\n\n\nconfunnel logOR selogOR, solidcontours shadedcontours noshadedregions\n\n\n\n\n\n\n\n\n\nconfunnel logOR selogOR, metric(invse)\n\n\n\n\n\n\n\n\n\nconfunnel logOR selogOR, onesided(upper) noshadedregions"
+  }
+]

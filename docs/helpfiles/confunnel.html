@@ -1,0 +1,193 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+----------------------------------------------------------------------------------------------------
+<span class=result>help confunnel</span>                                                                       (SJ8-2: gr0033)
+----------------------------------------------------------------------------------------------------
+<br><br>
+<span class=result><u>Title</u></span>
+<br><br>
+    <span class=result>confunnel</span> -- Contour-enhanced funnel plots for meta-analysis
+<br><br>
+<br><br>
+<span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>confunnel</span> <i>varname1</i> <i>varname2</i> [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
+<br><br>
+<br><br>
+    <i>options</i>                             Description
+    ----------------------------------------------------------------------------------------------
+    <span class=result><u>c</u></span><span class=result>ontours(</span><i>numlist</i><span class=result>)</span>                    specify significance levels of the contours to be
+                                          plotted; default is 1%, 5%, and 10% significance levels
+    <span class=result><u>contcol</u></span><span class=result>or(</span><i>colorstyle</i><span class=result>)</span>                specify color of the contour lines if <span class=result>shadedcontours</span> is
+                                          not specified
+    <span class=result><u>extra</u></span><span class=result>plot(</span><i>plots</i><span class=result>)</span>                     specify additional plots to overlay the funnel plot
+    <span class=result><u>functionlow</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>             pass options to the <span class=result>twoway function</span> commands used to draw
+                                          the contours
+    <span class=result><u>functionupp</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>             pass options to the <span class=result>twoway function</span> commands used to draw
+                                          the contours
+    <span class=result><u>legendlab</u></span><span class=result>els(</span><i>labels</i><span class=result>)</span>                 specify labels in the legend for added items
+    <span class=result><u>legend</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>                  specify options that affect the plot legend
+    <span class=result><u>m</u></span><span class=result>etric(se</span>|<span class=result>invse</span>|<span class=result>var</span>|<span class=result>invvar)</span>          the scale of the y axis; either <span class=result>se</span>, <span class=result>invse</span>, <span class=result>var</span>, or <span class=result>invvar</span>
+    <span class=result><u>one</u></span><span class=result>sided(lower</span>|<span class=result>upper)</span>                lower- or upper-tailed, one-sided significance contours
+    <span class=result><u>scatter</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>                 specifies any of the options documented in <span class=result>scatter</span>
+    <span class=result><u>shadedc</u></span><span class=result>ontours</span>                       specify shaded, instead of black, contour lines
+    [<span class=result><u>no</u></span>]<span class=result><u>shadedr</u></span><span class=result>egions</span>                    specify or suppress shaded regions between the contours
+    <span class=result><u>solidc</u></span><span class=result>ontours</span>                        specify solid, instead of dashed, contour lines
+    <span class=result><u>studyl</u></span><span class=result>ab(</span><i>string</i><span class=result>)</span>                     the legend label for the scatter points
+    <span class=result><u>twoway</u></span><span class=result>opts(</span><i>twoway_options</i><span class=result>)</span>           pass options to the <span class=result>twoway</span> plot
+    twoway_options                       pass options to the <span class=result>twoway</span> plot
+    ----------------------------------------------------------------------------------------------
+<br><br>
+<br><br>
+<span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>confunnel</span> plots contour-enhanced funnel plots for assessing small-study reporting bias in
+    meta-analysis.
+<br><br>
+    Contours illustrating the statistical significance of the study-effect estimates are plotted
+    from either a one- or two-tailed test.
+<br><br>
+    <span class=result>confunnel</span> requires two input variables; <i>varname1</i> a variable of effect estimates such as log
+    odds ratios and <i>varname2</i> a variable of the standard errors of the effect estimates.
+<br><br>
+    The y axis can be specified using different scales, namely, standard error, inverse standard
+    error, variance, and inverse variance.
+<br><br>
+<br><br>
+<span class=result><u>Options</u></span>
+<br><br>
+    <span class=result>contours(</span><i>numlist</i><span class=result>)</span> specifies the significance levels of the contours to be plotted; the default
+        is <span class=result>contours(1 5 10)</span>. There are only distinct line patterns for 8 significance levels. See 
+        numlist.
+<br><br>
+    <span class=result>contcolor(</span><i>colorstyle</i><span class=result>)</span> specifies the color of the contour lines if <span class=result>noshadedcontours</span> is
+        specified. See <span class=result>[G]</span> <i>colorstyle</i>.
+<br><br>
+    <span class=result>extraplot(</span><i>plots</i><span class=result>)</span> specifies one or multiple additional plots to be overlaid on the funnel plot.
+<br><br>
+    <span class=result>functionlowopts(</span><i>options</i><span class=result>)</span> and <span class=result>functionuppopts(</span><i>options</i><span class=result>)</span> pass options to the <span class=result>twoway function</span>
+        commands used to draw the significance contours; for example, the line widths can be
+        changed. See <span class=result>[G] graph twoway function</span>.
+<br><br>
+    <span class=result>legendlabels(</span><i>labels</i><span class=result>)</span> specifies labels in the legend for extra elements added to the funnel
+        plot.  The option will take the form:  <span class=result>legendlabels(`"8 "new label""')</span>.
+<br><br>
+    <span class=result>legendopts(</span><i>options</i><span class=result>)</span> passes options to the plot legend. See <span class=result>[G]</span> <i>legend_option</i>.
+<br><br>
+    <span class=result>metric(se</span>|<span class=result>invse</span>|<span class=result>var</span>|<span class=result>invvar)</span> specifies the metric of the y axis of the plot.  <span class=result>se</span>, <span class=result>invse</span>, <span class=result>var</span>,
+        and <span class=result>invvar</span> stand for standard error, inverse standard error, variance, and inverse
+        variance, respectively; the default is <span class=result>se</span>.
+<br><br>
+    <span class=result>onesided(lower</span>|<span class=result>upper)</span> can be lower or upper, for lower-tailed or upper-tailed levels of
+        statistical significance, respectively.  If unspecified, two-sided significance levels are
+        used to plot the contours.
+<br><br>
+    <span class=result>scatteropts(</span><i>options</i><span class=result>)</span> specifies any of the options documented in <span class=result>[G] graph twoway scatter</span>.
+<br><br>
+    <span class=result>shadedcontours</span> specifies shaded contour lines; specify with the <span class=result>noshadedregions</span> option.
+<br><br>
+    [<span class=result>no</span>]<span class=result>shadedregions</span> specifies or suppresses shaded regions between the contours.  This option
+        provides plots that are more similar to those in the original paper by Peters et al.
+        (2008) and the Cochrane Handbook.  A plot with shadedregions is now the default.
+<br><br>
+    <span class=result>solidcontours</span> specifies solid contour lines; specify with the <span class=result>shadedcontours</span> and
+        <span class=result>noshadedregions</span> option.
+<br><br>
+    <span class=result>studylab(</span><i>string</i><span class=result>)</span> specifies the label for the scatter points in the legend.  If not specified
+        the default is "Studies".
+<br><br>
+    <span class=result>twowayopts(</span><i>options</i><span class=result>)</span> specifies options passed to the <span class=result>twoway</span> plotting function; see <span class=result>[G]</span>
+        <i>twoway_options</i>.
+<br><br>
+    <span class=result>twoway_options</span> see <span class=result>[G]</span> <i>twoway_options</i>. As of <span class=result>confunnel</span> version 1.0.5 twoway options can be
+        specified at the end of the options and do not have to be within <span class=result>twowayopts</span>.
+<br><br>
+<span class=result><u>Remarks</u></span>
+<br><br>
+    The <span class=result>confunnel</span> command is based on an idea by Peters et al. (2008) to superimpose contours of
+    statistical significance on a funnel plot in a meta-analysis. The command was explained in
+    Palmer et al. (2008). Superimposing contours on funnel plots has also been suggested by
+    Spiegelhalter (2005) in a slightly different context.
+<br><br>
+    <span class=result>confunnel</span> can be used in conjunction with the results of the <span class=result>metan</span>, <span class=result>metatrim</span>, and <span class=result>metabias</span>
+    commands.  See <span class=result>meta</span> in Stata version 10 for information about user-written commands for
+    meta-analysis.
+<br><br>
+<br><br>
+<span class=result><u>Examples</u></span>
+<br><br>
+    The following examples use the example dataset accompanying <span class=result>metan</span>.
+<br><br>
+    <span class=input>. confunnel logOR selogOR</span>
+    <i>(</i><i>click to run</i><i>)</i>
+<br><br>
+    <span class=input>. confunnel logOR selogOR, noshadedregions</span>
+    <i>(</i><i>click to run</i><i>)</i>
+<br><br>
+    <span class=input>. confunnel logOR selogOR, solidcontours shadedcontours noshadedregions</span>
+    <i>(</i><i>click to run</i><i>)</i>
+<br><br>
+    <span class=input>. confunnel logOR selogOR, metric(invse)</span>
+    <i>(</i><i>click to run</i><i>)</i>
+<br><br>
+    <span class=input>. confunnel logOR selogOR, onesided(upper) noshadedregions</span>
+    <i>(</i><i>click to run</i><i>)</i>
+<br><br>
+<br><br>
+<span class=result><u>References</u></span>
+<br><br>
+    Palmer, T. M., J. L. Peters, A. J. Sutton, and S. G. Moreno. 2008.  Contour enhanced funnel
+        plots for meta-analysis. <i>Stata Journal</i> 8: 242-254.
+<br><br>
+    Peters, J. L., A. J. Sutton, D. R. Jones, K. R. Abrams, and L. Rushton.  2008.
+        Contour-enhanced meta-analysis funnel plots help distinguish publication bias from other
+        causes of asymmetry. <i>Journal of Clinical Epidemiology</i>. 61: 991-996.
+<br><br>
+    Spiegelhalter, D. J. 2005. Funnel plots for comparing institutional performance.  <i>Statistics</i>
+        <i>in Medicine</i> 24: 1185-1202.
+<br><br>
+    Sterne, J. A. C., and M. Egger. 2001. Funnel plots for detecting bias in meta-analysis:
+        Guidelines on choice of axis.  <i>Journal of Clinical Epidemiology</i> 54: 1046-1055.
+<br><br>
+    Sterne, J. A. C., and R. M. Harbord. 2004. Funnel plots in meta-analysis. <i>Stata Journal</i> 4:
+        127-141.
+<br><br>
+    Sterne, J. A. C., M. Egger, and D. Moher. 2008. Chapter 10: Addressing reporting biases;
+        Cochrane Handbook for Systematic Reviews of Interventions Version 5.0.1.
+<br><br>
+<br><br>
+<span class=result><u>Author</u></span>
+<br><br>
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of
+        Bristol, UK.  tom.palmer@bristol.ac.uk.
+ 
+    Jaime Peters wrote the first version of this command.
+<br><br>
+    Thanks to Santiago G. Moreno for testing the command.
+<br><br>
+    Please report any errors you may find.
+<br><br>
+<br><br>
+<span class=result><u>Also see</u></span>
+<br><br>
+    Article: <i>Stata Journal</i>, volume 8, number 2: gr0033
+<br><br>
+    Online:  <span class=result>metabias</span>, <span class=result>metafunnel</span>, <span class=result>metan</span> (if installed)
+</pre>
+</body>
+</html>

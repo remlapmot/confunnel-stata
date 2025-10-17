@@ -1,0 +1,38 @@
+---
+title: confunnel helpfile examples
+pagetitle: confunnel-examples
+jupyter: nbstata
+---
+
+```{stata}
+*| include: false
+adopath ++ ..
+```
+
+The following examples use the example dataset accompanying `metan`.
+
+```{stata}
+use http://fmwww.bc.edu/repec/bocode/m/metan_example_data.dta, clear
+gen logOR = log((tdeath*cnodeath)/(tnodeath*cdeath))
+gen selogOR = sqrt((1/tdeath) + (1/tnodeath) + (1/cdeath) + (1/cnodeath))
+```
+
+```{stata}
+confunnel logOR selogOR
+```
+
+```{stata}
+confunnel logOR selogOR, noshadedregions
+```
+
+```{stata}
+confunnel logOR selogOR, solidcontours shadedcontours noshadedregions
+```
+
+```{stata}
+confunnel logOR selogOR, metric(invse)
+```
+
+```{stata}
+confunnel logOR selogOR, onesided(upper) noshadedregions
+```

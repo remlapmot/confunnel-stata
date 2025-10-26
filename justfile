@@ -7,10 +7,13 @@ readme:
 [working-directory: 'site']
 render:
     #!/usr/bin/env bash
+    uv sync
     source .venv/bin/activate
-    python -m nbstata.install --sys-prefix
+    python -m nbstata.install
     quarto render
-    rm -rf ../docs/*
+    rm -rf ../docs
+    mkdir ../docs
+    mkdir ../docs/img
     cp ../img/* ../docs/img/
     mv _site/* ../docs/
 

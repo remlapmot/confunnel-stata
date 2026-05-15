@@ -1,7 +1,7 @@
 [project]
 name = "site"
 version = "0.1.0"
-description = "Add your description here"
+description = "Website for confunnel Stata package using Quarto and nbstata Jupyter kernel"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [

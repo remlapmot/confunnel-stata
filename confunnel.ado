@@ -197,7 +197,7 @@ else if "`metric'" == "se" { // y-axis variable: standard error
 			local h = `i' - 1
 			local Lz = invnorm(`c'/100)
 			local function `"`function' function x*`Lz', horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' || "'
-			local Rz = invnorm(1 - `c'/100) // require invsible rhs contours to ensure symmetric plot
+			local Rz = invnorm(1 - `c'/100) // require invisible rhs contours to ensure symmetric plot
 			local function `"`function' function x*`Rz', horizontal range(0 `=abs(`ymax')') lc(none) || "'
 			local contourlabels `"`contourlabels' `=2*`h' - 1' "`c'%""'
 		}

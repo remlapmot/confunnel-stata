@@ -2,7 +2,7 @@
       name:  confunnel
        log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/confunnel.log
   log type:  text
- opened on:  17 Oct 2025, 14:51:57
+ opened on:  15 May 2026, 08:11:30
 
 . cscript confunnel adofiles confunnel
 ----------------------------------------------------------------BEGIN confunnel
@@ -15,12 +15,12 @@
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 06 Oct 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -53,5 +53,5 @@ end of do-file
       name:  confunnel
        log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/confunnel.log
   log type:  text
- closed on:  17 Oct 2025, 14:51:59
+ closed on:  15 May 2026, 08:11:31
 -------------------------------------------------------------------------------

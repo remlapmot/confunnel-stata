@@ -244,7 +244,7 @@ else if "`metric'" == "var" { // variance on y-axis
 	qui gen `yvar' = `se'^2
 	local reverse "reverse"
 	local ytitle "Variance"
-	qui su `if' `in' `yvar', meanonly
+	qui su `yvar' `if' `in', meanonly
 	local ymax = r(max)
 	if "`onesided'" == "lower" {
 		foreach c in `contours' {

@@ -174,7 +174,7 @@ if "`metric'" == "invse" { // y-axis variable: inverse standard error
 				if `i' == 2 {
 					local regionlabels `"1 "p < `c'%""'
 				}
-				else{
+				else {
 					local regionlabels `"`regionlabels' `=2*(`h'-1)' "`cprev'% < p < `c'%""'
 				}
 				if `h' == `ncontours' {
@@ -229,7 +229,7 @@ else if "`metric'" == "se" { // y-axis variable: standard error
 				if `i' == 2 {
 					local regionlabels `"1 "p < `c'%""'
 				}
-				else{
+				else {
 					local regionlabels `"`regionlabels' `=2*(`h'-1)' "`cprev'% < p < `c'%""'
 				}
 				if `h' == `ncontours' {
@@ -284,7 +284,7 @@ else if "`metric'" == "var" { // variance on y-axis
 				if `i' == 2 {
 					local regionlabels `"1 "p < `c'%""'
 				}
-				else{
+				else {
 					local regionlabels `"`regionlabels' `=2*(`h'-1)' "`cprev'% < p < `c'%""'
 				}
 				if `h' == `ncontours' {
@@ -340,7 +340,7 @@ else { // inverse variance on y-axis
 				if `i' == 2 {
 					local regionlabels `"1 "p < `c'%""'
 				}
-				else{
+				else {
 					local regionlabels `"`regionlabels' `=2*(`h'-1)' "`cprev'% < p < `c'%""'
 				}
 				if `h' == `ncontours' {

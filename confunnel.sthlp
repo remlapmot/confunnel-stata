@@ -63,7 +63,7 @@ contours to be plotted; the default is {cmd:contours(1 5 10)}. There are only
 distinct line patterns for 8 significance levels. See {help numlist}.
 
 {phang}{opth contcolor(colorstyle)} specifies the color of the contour lines if
-{cmd:noshadedcontours} is specified. See {manhelpi colorstyle G}.
+{cmd:shadedcontours} is not specified. See {manhelpi colorstyle G}.
 
 {phang}{opt extraplot(plots)} specifies one or multiple additional plots to be
 overlaid on the funnel plot.
@@ -80,12 +80,12 @@ elements added to the funnel plot.  The option will take the form:
 {phang}{opt legendopts(options)} passes options to the plot legend. See
 {manhelpi legend_option G}.
 
-{phang}{cmd:metric(se}|{cmd:invse}|{cmd:var}|{cmd:invvar)} specifies the metric
+{phang}{cmdab:m:etric(}{cmd:se}|{cmd:invse}|{cmd:var}|{cmd:invvar}{cmd:)} specifies the metric
 of the y axis of the plot.  {cmd:se}, {cmd:invse}, {cmd:var}, and {cmd:invvar}
 stand for standard error, inverse standard error, variance, and inverse
 variance, respectively; the default is {cmd:se}.
 
-{phang}{cmd:onesided(lower}|{cmd:upper)} can be lower or upper,
+{phang}{cmdab:one:sided(}{cmd:lower}|{cmd:upper}{cmd:)} can be lower or upper,
 for lower-tailed or upper-tailed levels of statistical significance,
 respectively.  If unspecified, two-sided significance levels are used to plot
 the contours.

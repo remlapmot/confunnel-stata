@@ -3,8 +3,8 @@ dev:
 
 readme:
     stata-mp "do readme-example"
-    
-[working-directory: 'site']
+
+[working-directory('site')]
 render:
     #!/usr/bin/env bash
     uv sync
@@ -17,6 +17,6 @@ render:
     cp ../img/* ../docs/img/
     mv _site/* ../docs/
 
-[working-directory: 'cscripts']
+[working-directory('cscripts')]
 test:
     stata-mp -b "do master"

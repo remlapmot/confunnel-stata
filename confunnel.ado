@@ -131,8 +131,8 @@ if "`studylab'" == "" {
 local i 1 // used as a counter for labelling the contours in the legend
 tempvar yvar
 if "`metric'" == "invse" { // y-axis variable: inverse standard error
-	qui gen `yvar' = 1/`se'
-	qui su `yvar' `if' `in', meanonly
+	qui gen `yvar' = 1/`se' if `touse'
+	qui su `yvar' if `touse', meanonly
 	local ymax = r(max)
 	local ymin = r(min)
 	local ytitle "Inverse standard error"
@@ -186,10 +186,10 @@ if "`metric'" == "invse" { // y-axis variable: inverse standard error
 	}
 }
 else if "`metric'" == "se" { // y-axis variable: standard error
-	qui gen `yvar' = `se'
+	qui gen `yvar' = `se' if `touse'
 	local reverse "reverse"
 	local ytitle "Standard error"
-	qui su `yvar' `if' `in', meanonly
+	qui su `yvar' if `touse', meanonly
 	local ymax = r(max)
 	if "`onesided'" == "lower" {
 		foreach c in `contours' {
@@ -241,10 +241,10 @@ else if "`metric'" == "se" { // y-axis variable: standard error
 	}
 }
 else if "`metric'" == "var" { // variance on y-axis
-	qui gen `yvar' = `se'^2
+	qui gen `yvar' = `se'^2 if `touse'
 	local reverse "reverse"
 	local ytitle "Variance"
-	qui su `yvar' `if' `in', meanonly
+	qui su `yvar' if `touse', meanonly
 	local ymax = r(max)
 	if "`onesided'" == "lower" {
 		foreach c in `contours' {
@@ -297,8 +297,8 @@ else if "`metric'" == "var" { // variance on y-axis
 
 }
 else { // inverse variance on y-axis
-	qui gen `yvar' = (1/`se')^2
-	qui su `yvar' `if' `in', meanonly
+	qui gen `yvar' = (1/`se')^2 if `touse'
+	qui su `yvar' if `touse', meanonly
 	local ymax = r(max)
 	local ymin = r(min)
 	local ytitle "Inverse variance"

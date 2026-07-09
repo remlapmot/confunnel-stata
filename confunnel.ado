@@ -8,7 +8,7 @@
 * 1.0.4 Tom Palmer 26oct2007; based on con_funnel by Jaime Peters
 program confunnel
 version 8.2
-syntax varlist(min=2 max=2) [if] [in], [Contours(string) CONTCOLor(string) ///
+syntax varlist(min=2 max=2) [if] [in], [Contours(numlist >0 <100 sort) CONTCOLor(string) ///
 			EXTRAplot(string) ///
 			FUNCTIONLOWopts(string) FUNCTIONUPPopts(string) ///
 			LEGENDLABels(string) LEGENDopts(string) ///

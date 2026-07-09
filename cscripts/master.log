@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  master
-       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/master.log
+       log:  /Users/eptmp/Documents/GitHub/confunnel-stata/cscripts/master.log
   log type:  text
- opened on:  15 May 2026, 08:11:30
+ opened on:   9 Jul 2026, 10:07:18
 
 . 
 . cscript master
@@ -22,25 +22,26 @@
   5. }
 -------------------------------------------------------------------------------
       name:  confunnel
-       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/confunnel.log
+       log:  /Users/eptmp/Documents/GitHub/confunnel-stata/cscripts/confunnel.l
+> og
   log type:  text
- opened on:  15 May 2026, 08:11:30
+ opened on:   9 Jul 2026, 10:07:18
 
 . cscript confunnel adofiles confunnel
 ----------------------------------------------------------------BEGIN confunnel
 
 -> which confunnel, usesysdir
-/Users/tom/Documents/GitHub/confunnel-stata/confunnel.ado
-*! 1.0.5 Tom Palmer 27nov2008; based on con_funnel by Jaime Peters
+/Users/eptmp/Documents/GitHub/confunnel-stata/confunnel.ado
+*! 1.0.6 Tom Palmer 09jul2026; based on con_funnel by Jaime Peters
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -71,17 +72,46 @@ Serial number: 501909307934
 . confunnel logOR selogOR, onesided(upper) noshadedregions
 
 . 
+. confunnel logOR selogOR, onesided(lower) noshadedregions
+
+. 
+. confunnel logOR selogOR, metric(var)
+
+. 
+. confunnel logOR selogOR, metric(invvar)
+
+. 
+. confunnel logOR selogOR in 1/10, metric(invse)
+
+. 
+. confunnel logOR selogOR if selogOR < 1, metric(invvar) noshadedregions
+
+. 
+. confunnel logOR selogOR, functionlowopts(lc(red)) functionuppopts(lc(blue)) n
+> oshadedregions
+
+. 
+. * unsorted contour levels are sorted ascending
+. confunnel logOR selogOR, contours(10 5 1)
+
+. 
+. * contour levels outside (0, 100) are rejected
+. rcof "noisily confunnel logOR selogOR, contours(0 5)" == 125
+contours() invalid -- invalid numlist has elements outside of allowed range
+
+. 
 end of do-file
       name:  confunnel
-       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/confunnel.log
+       log:  /Users/eptmp/Documents/GitHub/confunnel-stata/cscripts/confunnel.l
+> og
   log type:  text
- closed on:  15 May 2026, 08:11:31
+ closed on:   9 Jul 2026, 10:07:21
 -------------------------------------------------------------------------------
 
 . 
 . log close _all
       name:  master
-       log:  /Users/tom/Documents/GitHub/confunnel-stata/cscripts/master.log
+       log:  /Users/eptmp/Documents/GitHub/confunnel-stata/cscripts/master.log
   log type:  text
- closed on:  15 May 2026, 08:11:31
+ closed on:   9 Jul 2026, 10:07:21
 -------------------------------------------------------------------------------

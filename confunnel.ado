@@ -1,4 +1,9 @@
-*! 1.0.5 Tom Palmer 27nov2008; based on con_funnel by Jaime Peters
+*! 1.0.6 Tom Palmer 09jul2026; based on con_funnel by Jaime Peters
+* changes:	- metric(invvar) contour equations corrected
+*			- functionlowopts/functionuppopts applied to correct contours for metric(se) and metric(var)
+*			- contours and axis ranges respect if/in restrictions
+*			- contours() validated as numlist strictly between 0 and 100, sorted ascending
+* 1.0.5 Tom Palmer 27nov2008; based on con_funnel by Jaime Peters
 * to do:	- eform labelling of x-axis - check how metan does this
 * additions: - 'if' & 'in' bug fixed, spotted by AJS
 *			- allow direct specification of twoway options via: syntax , [*]

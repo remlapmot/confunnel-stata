@@ -1,5 +1,5 @@
 {smcl}
-{* Tom Palmer 19nov2008 }{...}
+{* 1.0.6 Tom Palmer 09jul2026 }{...}
 {hline}
 {cmd:help confunnel}{right: ({browse "http://www.stata-journal.com/article.html?article=gr0033":SJ8-2: gr0033})}
 {hline}

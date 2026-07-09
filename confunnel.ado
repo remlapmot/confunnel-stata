@@ -160,7 +160,7 @@ if "`metric'" == "invse" { // y-axis variable: inverse standard error
 	}
 	else {
 		if "`shadedregions'" == "shadedregions" {
-			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') base(`ymin') `recast' lw(thin) lc(`lc`h'') xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "'
+			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') base(`ymin') `recast' lw(thin) xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "'
 		}	
 		foreach c in `contours' {
 			local i = `i' + 1
@@ -215,7 +215,7 @@ else if "`metric'" == "se" { // y-axis variable: standard error
 	}
 	else {
 		if "`shadedregions'" == "shadedregions" {	
-			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') `recast' lw(thin) lc(`lc`h'') xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "' //
+			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') `recast' lw(thin) xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "' //
 		}
 		foreach c in `contours' {
 			local i = `i' + 1
@@ -270,7 +270,7 @@ else if "`metric'" == "var" { // variance on y-axis
 	}
 	else {
 		if "`shadedregions'" == "shadedregions" {	
-			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') `recast' lw(thin) lc(`lc`h'') xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "'
+			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') `recast' lw(thin) xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "'
 		}
 		foreach c in `contours' {
 			local i = `i' + 1
@@ -326,7 +326,7 @@ else { // inverse variance on y-axis
 	}
 	else {
 		if "`shadedregions'" == "shadedregions" {
-			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') base(`ymin') `recast' lw(thin) lc(`lc`h'') xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "'
+			local function `"`function' function `ymax', xaxis(2) color(`bgcolor') base(`ymin') `recast' lw(thin) xscale(off axis(2)) xlabel(none, axis(2)) xtitle("", axis(2)) || "'
 		}	
 		foreach c in `contours' {
 			local i = `i' + 1

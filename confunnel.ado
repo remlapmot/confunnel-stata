@@ -222,8 +222,8 @@ else if "`metric'" == "se" { // y-axis variable: standard error
 			local h = `i' - 1
 			local Lz = invnorm(`c'/(100*2))
 			local Rz = invnorm(1 - `c'/(100*2))
-			local function `"`function' function x*`Rz', horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' `recast' color(`color`h'') || "'
-			local function `"`function' function x*`Lz', horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' `recast' color(`color`h'') || "'
+			local function `"`function' function x*`Rz', horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' `recast' color(`color`h'') || "'
+			local function `"`function' function x*`Lz', horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' `recast' color(`color`h'') || "'
 			local contourlabels `"`contourlabels' `=2*`h'' "`c'%""'
 			if "`shadedregions'" == "shadedregions" {
 				if `i' == 2 {
@@ -277,8 +277,8 @@ else if "`metric'" == "var" { // variance on y-axis
 			local h = `i' - 1
 			local Lz = invnorm(`c'/(100*2))
 			local Rz = invnorm(1 - `c'/(100*2))
-			local function `"`function' function (sqrt(x)*`Rz'), horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' `recast' color(`color`h'') || "'
-			local function `"`function' function (sqrt(x)*`Lz'), horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' `recast' color(`color`h'') || "'
+			local function `"`function' function (sqrt(x)*`Rz'), horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' `recast' color(`color`h'') || "'
+			local function `"`function' function (sqrt(x)*`Lz'), horizontal range(0 `=abs(`ymax')') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' `recast' color(`color`h'') || "'
 			local contourlabels `"`contourlabels' `=2*`h'' "`c'%""'
 			if "`shadedregions'" == "shadedregions" {
 				if `i' == 2 {

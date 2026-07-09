@@ -55,7 +55,7 @@ else if "`shadedregions'" == "noshadedregions" {
 } // i.e. allows shadedregions option to produce shadedregions
 
 if "`shadedregions'" == "shadedregions" & "`onesided'" != "" {
-	di as txt "shadedregions and onesided options cannot currently be specified together, plot uses default onesided options"
+	di as txt "shadedregions and onesided() cannot currently be specified together; plotting one-sided contours without shaded regions"
 	local shadedregions ""
 }
 if "`shadedregions'" == "shadedregions" {

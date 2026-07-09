@@ -14,7 +14,7 @@
 {title:Syntax}
 
 {phang2}
-{cmd: confunnel} {it:varname1} {it:varname2} {ifin} [{cmd:,} {it:options}]
+{cmd:confunnel} {it:varname1} {it:varname2} {ifin} [{cmd:,} {it:options}]
 
 
 {synoptset 34}{...}
@@ -23,8 +23,8 @@
 {synopt:{opth c:ontours(numlist)}} specify significance levels of the contours to be plotted; default is 1%, 5%, and 10% significance levels{p_end}
 {synopt:{opth contcol:or(colorstyle)}} specify color of the contour lines if {cmd:shadedcontours} is not specified{p_end}
 {synopt:{opt extra:plot(plots)}} specify additional plots to overlay the funnel plot{p_end}
-{synopt:{opt functionlow:opts(options)}} pass options to the {cmd:twoway function} commands used to draw the contours {p_end}
-{synopt:{opt functionupp:opts(options)}}  pass options to the {cmd:twoway function} commands used to draw the contours {p_end}
+{synopt:{opt functionlow:opts(options)}} pass options to the {cmd:twoway function} commands used to draw the lower-tail contours{p_end}
+{synopt:{opt functionupp:opts(options)}} pass options to the {cmd:twoway function} commands used to draw the upper-tail contours{p_end}
 {synopt:{opt legendlab:els(labels)}} specify labels in the legend for added items{p_end}
 {synopt:{opt legend:opts(options)}} specify options that affect the plot legend{p_end}
 {synopt:{cmdab:m:etric(}{cmd:se}|{cmd:invse}|{cmd:var}|{cmd:invvar}{cmd:)}} the scale of the y axis; either {cmd:se}, {cmd:invse}, {cmd:var}, or {cmd:invvar}{p_end}
@@ -59,8 +59,10 @@ error, inverse standard error, variance, and inverse variance.{p_end}
 {title:Options}
 
 {phang}{opth contours(numlist)} specifies the significance levels of the
-contours to be plotted; the default is {cmd:contours(1 5 10)}. There are only
-distinct line patterns for 8 significance levels. See {help numlist}.
+contours to be plotted; levels must be strictly between 0 and 100 and are
+sorted into ascending order. The default is {cmd:contours(1 5 10)}. There
+are only distinct dashed line patterns for 7 significance levels. See
+{help numlist}.
 
 {phang}{opth contcolor(colorstyle)} specifies the color of the contour lines if
 {cmd:shadedcontours} is not specified. See {manhelpi colorstyle G}.
@@ -69,9 +71,9 @@ distinct line patterns for 8 significance levels. See {help numlist}.
 overlaid on the funnel plot.
 
 {phang}{opt functionlowopts(options)} and {opt functionuppopts(options)} pass
-options to the {cmd:twoway function} commands used to draw the 
-significance contours; for example, the line widths can be changed. See
-{manhelp graph_twoway_function G:graph twoway function}.
+options to the {cmd:twoway function} commands used to draw the lower- and
+upper-tail significance contours, respectively; for example, the line widths
+can be changed. See {manhelp graph_twoway_function G:graph twoway function}.
 
 {phang}{opt legendlabels(labels)} specifies labels in the legend for extra
 elements added to the funnel plot.  The option will take the form:
@@ -101,7 +103,7 @@ in {manhelp graph_twoway_scatter G:graph twoway scatter}.
  A plot with shadedregions is now the default.
  
 {phang}{opt solidcontours} specifies solid contour lines; specify with the {cmd:shadedcontours}
- and {cmd:noshadedregions} option.
+ and {cmd:noshadedregions} options.
 
 {phang}{opt studylab(string)} specifies the label for the scatter points in the legend. 
 If not specified the default is "Studies". 

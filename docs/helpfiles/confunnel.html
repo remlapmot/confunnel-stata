@@ -37,9 +37,9 @@ BODY{background-color: ffffff;
                                           not specified
     <span class=result><u>extra</u></span><span class=result>plot(</span><i>plots</i><span class=result>)</span>                     specify additional plots to overlay the funnel plot
     <span class=result><u>functionlow</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>             pass options to the <span class=result>twoway function</span> commands used to draw
-                                          the contours
+                                          the lower-tail contours
     <span class=result><u>functionupp</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>             pass options to the <span class=result>twoway function</span> commands used to draw
-                                          the contours
+                                          the upper-tail contours
     <span class=result><u>legendlab</u></span><span class=result>els(</span><i>labels</i><span class=result>)</span>                 specify labels in the legend for added items
     <span class=result><u>legend</u></span><span class=result>opts(</span><i>options</i><span class=result>)</span>                  specify options that affect the plot legend
     <span class=result><u>m</u></span><span class=result>etric(se</span>|<span class=result>invse</span>|<span class=result>var</span>|<span class=result>invvar)</span>          the scale of the y axis; either <span class=result>se</span>, <span class=result>invse</span>, <span class=result>var</span>, or <span class=result>invvar</span>
@@ -71,9 +71,10 @@ BODY{background-color: ffffff;
 <br><br>
 <span class=result><u>Options</u></span>
 <br><br>
-    <span class=result>contours(</span><i>numlist</i><span class=result>)</span> specifies the significance levels of the contours to be plotted; the default
-        is <span class=result>contours(1 5 10)</span>. There are only distinct line patterns for 8 significance levels. See 
-        numlist.
+    <span class=result>contours(</span><i>numlist</i><span class=result>)</span> specifies the significance levels of the contours to be plotted; levels must
+        be strictly between 0 and 100 and are sorted into ascending order. The default is
+        <span class=result>contours(1 5 10)</span>. There are only distinct dashed line patterns for 7 significance levels.
+        See numlist.
 <br><br>
     <span class=result>contcolor(</span><i>colorstyle</i><span class=result>)</span> specifies the color of the contour lines if <span class=result>shadedcontours</span> is not
         specified. See <span class=result>[G]</span> <i>colorstyle</i>.
@@ -81,8 +82,8 @@ BODY{background-color: ffffff;
     <span class=result>extraplot(</span><i>plots</i><span class=result>)</span> specifies one or multiple additional plots to be overlaid on the funnel plot.
 <br><br>
     <span class=result>functionlowopts(</span><i>options</i><span class=result>)</span> and <span class=result>functionuppopts(</span><i>options</i><span class=result>)</span> pass options to the <span class=result>twoway function</span>
-        commands used to draw the significance contours; for example, the line widths can be
-        changed. See <span class=result>[G] graph twoway function</span>.
+        commands used to draw the lower- and upper-tail significance contours, respectively; for
+        example, the line widths can be changed. See <span class=result>[G] graph twoway function</span>.
 <br><br>
     <span class=result>legendlabels(</span><i>labels</i><span class=result>)</span> specifies labels in the legend for extra elements added to the funnel
         plot.  The option will take the form:  <span class=result>legendlabels(`"8 "new label""')</span>.
@@ -106,7 +107,7 @@ BODY{background-color: ffffff;
         (2008) and the Cochrane Handbook.  A plot with shadedregions is now the default.
 <br><br>
     <span class=result>solidcontours</span> specifies solid contour lines; specify with the <span class=result>shadedcontours</span> and
-        <span class=result>noshadedregions</span> option.
+        <span class=result>noshadedregions</span> options.
 <br><br>
     <span class=result>studylab(</span><i>string</i><span class=result>)</span> specifies the label for the scatter points in the legend.  If not specified
         the default is "Studies".

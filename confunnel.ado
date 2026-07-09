@@ -46,11 +46,6 @@ if "`contours'" == "" { // default significance contours
 }
 local ncontours = wordcount("`contours'")
 
-* max & min values of effect size measure
-qui su `est' `if' `in', meanonly
-local estmin = r(min)
-local estmax = r(max)
-
 * shadedregions option - try recast option to recast i) overall plot, or ii) each plot on the plot
 if "`shadedregions'" == "" {
 	local shadedregions "shadedregions"

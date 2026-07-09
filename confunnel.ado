@@ -307,9 +307,9 @@ else { // inverse variance on y-axis
 			local i = `i' + 1
 			local h = `i' - 1
 			local Lz = invnorm(`c'/100)
-			local function `"`function' function (`Lz'^2/x^2), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' || "'
+			local function `"`function' function (`Lz'/sqrt(x)), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' || "'
 			local Rz = invnorm(1 - `c'/100)
-			local function `"`function' function (`Rz'^2/x^2), horizontal range(`yvar') lc(none) || "'
+			local function `"`function' function (`Rz'/sqrt(x)), horizontal range(`yvar') lc(none) || "'
 			local contourlabels `"`contourlabels' `=2*`h' - 1' "`c'%""'
 		}
 	}
@@ -318,9 +318,9 @@ else { // inverse variance on y-axis
 			local i = `i' + 1
 			local h = `i' - 1
 			local Rz = invnorm(1 - `c'/100)
-			local function `"`function' function (`Rz'^2/x^2), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' || "'
+			local function `"`function' function (`Rz'/sqrt(x)), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' || "'
 			local Lz = invnorm(`c'/100)
-			local function `"`function' function (`Lz'^2/x^2), horizontal range(`yvar') lc(none) || "'
+			local function `"`function' function (`Lz'/sqrt(x)), horizontal range(`yvar') lc(none) || "'
 			local contourlabels `"`contourlabels' `=2*`h' - 1' "`c'%""'
 		}
 	}
@@ -333,8 +333,8 @@ else { // inverse variance on y-axis
 			local h = `i' - 1
 			local Lz = invnorm(`c'/(100*2))
 			local Rz = invnorm(1 - `c'/(100*2))
-			local function `"`function' function (`Lz'^2/x^2), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' `recast' color(`color`h'') || "'
-			local function `"`function' function (`Rz'^2/x^2), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' `recast' color(`color`h'') || "'
+			local function `"`function' function (`Lz'/sqrt(x)), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionlowopts' `recast' color(`color`h'') || "'
+			local function `"`function' function (`Rz'/sqrt(x)), horizontal range(`yvar') lc(`lc`h'') lp(`lp`h'') lw(thin) `functionuppopts' `recast' color(`color`h'') || "'
 			local contourlabels `"`contourlabels' `=2*`h'' "`c'%""'
 			if "`shadedregions'" == "shadedregions" {
 				if `i' == 2 {
